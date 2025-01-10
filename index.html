@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Location-Based App</title>
+
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css' rel='stylesheet' />
+  
+    <link href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css' rel='stylesheet' />
+    <link rel="stylesheet" href="acc.css">
+</head>
+<body>
+    <header>
+        
+    </header>
+    <main>
+        <div id="map"></div>
+        <div id="sidebar">
+            <h2>Distance Calculator</h2>
+            <div id="start"></div>
+            <div id="end"></div>
+            <button id="calculate">Calculate Distance</button>
+            <p id="distance"></p>
+
+            <h2>Route Suggestions</h2>
+            <select id="transport-mode">
+                <option value="driving">Driving</option>
+                <option value="walking">Walking</option>
+                <option value="cycling">Cycling</option>
+            </select>
+            <button id="get-route">Get Route</button>
+            <div id="route-info"></div>
+
+            <h2>Nearby Places</h2>
+            <div id="nearby-places">
+            </div>
+            <h2>Custom Recommendations</h2>
+            <div id="custom-recommendations">
+            </div>
+    
+            <h2>Traffic Information</h2>
+            <label>
+                <input type="checkbox" id="toggle-traffic">
+                Show Traffic
+            </label>
+          
+    </div>
+    </main>
+    <button id="toggle-style" class="mapbox-btn">Satellite View</button>
+<div id="map"></div> <!-- Your map div should be defined here -->
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js'></script>
+ 
+    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js'></script>
+    
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Turf.js/6.5.0/turf.min.js'></script>
+    
+    <script src="acc.js"></script>
+</body>
+</html>

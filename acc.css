@@ -1,0 +1,250 @@
+/* Reset default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: auto !important;
+    font-family: Arial, sans-serif;
+    background-color: #7279ab;
+}
+
+main {
+    display: flex;
+    height: calc(100% - 60px);
+}
+
+#map {
+    flex: 3;
+}
+
+#sidebar {
+    flex: 1;
+    padding: 20px;
+    background-color: #f4f4f4;
+    overflow-y: auto;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+#sidebar h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#sidebar div {
+    margin-bottom: 10px;
+}
+
+#sidebar button {
+    padding: 10px 15px;
+    margin: 5px 0;
+    cursor: pointer;
+    background-color: #3f51b5;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+#sidebar button:hover {
+    background-color: #303f9f;
+}
+
+#distance, #route-info {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+#nearby-places, #custom-recommendations {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+#nearby-places ul, #custom-recommendations ul {
+    list-style-type: none;
+}
+
+#nearby-places li, #custom-recommendations li {
+    margin-bottom: 5px;
+}
+
+#transport-mode {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px; /* Space between checkbox and label */
+    transform: scale(1.2); /* Make checkbox larger */
+}
+
+/* General styles for small devices (like phones) */
+@media (max-width: 600px) {
+    main {
+        flex-direction: column; /* Stack the map and sidebar vertically */
+    }
+
+    #map, #sidebar {
+        width: 100%;
+        height: 50vh; /* Make the map and sidebar take equal height */
+    }
+
+    #sidebar {
+        padding: 10px;
+    }
+
+    #sidebar h2 {
+        font-size: 1.2em; /* Make headers smaller */
+    }
+
+    #sidebar button, #sidebar select, #transport-mode {
+        width: 100%; /* Full width for inputs and buttons */
+        font-size: 1em;
+    }
+}
+
+/* Medium devices (tablets) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    main {
+        flex-direction: row;
+    }
+
+    #map {
+        height: 60vh;
+    }
+
+    #sidebar {
+        width: 40%;
+        height: 60vh;
+    }
+
+    #sidebar h2 {
+        font-size: 1.4em;
+    }
+
+    #sidebar button, #sidebar select, #transport-mode {
+        font-size: 1em;
+    }
+}
+
+/* Large devices (like desktops) */
+@media (min-width: 1025px) {
+    main {
+        flex-direction: row;
+    }
+
+    #map {
+        height: 100vh; /* Full height for map */
+    }
+
+    #sidebar {
+        width: 30%;
+        height: 100vh;
+    }
+
+    #sidebar h2 {
+        font-size: 1.5em;
+    }
+
+    #sidebar button, #sidebar select, #transport-mode {
+        font-size: 1.2em;
+    }
+}
+
+
+/* Styling for the wrapper div that holds both sections */
+.places-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f9f9f9;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    gap: 20px;
+}
+
+/* Individual section for Nearby Places and Custom Recommendations */
+.section {
+    flex: 1;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease;
+}
+
+/* Styling the headings */
+.section h2 {
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    color: #333;
+}
+
+/* List styles for both sections */
+.section div {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Basic style for list items inside the sections */
+.section div div {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #fafafa;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for the list items */
+.section div div:hover {
+    background-color: #f0f0f0;
+}
+
+/* Hover effect for the entire section */
+.section:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.mapbox-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px 15px;
+    background-color: #1db7dd;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    z-index: 999; /* Ensure it's on top of the map */
+}
+
+.mapbox-btn:hover {
+    background-color: #17a2b8; /* Slightly darker color on hover */
+}
