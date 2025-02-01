@@ -1,4 +1,3 @@
-
 mapboxgl.accessToken = 'pk.eyJ1IjoiZ2F1cmF2bmciLCJhIjoiY20xdG1kZTA0MDNiejJ2c2JtMmRlaG02OSJ9._xGChZrx9OZlwpcv3dXVqQ';
 const map = new mapboxgl.Map({
     container: 'map',
@@ -328,4 +327,3 @@ function displayCustomRecommendations(coords) {
         recommendationsDiv.appendChild(recItem);
     });
 }
-
